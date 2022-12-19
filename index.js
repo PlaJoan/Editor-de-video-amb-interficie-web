@@ -40,7 +40,7 @@ function change_name(path){
             fs.rename(`${__dirname}/videos/${ls[j]}`,
                 `${__dirname}/videos/${path}`, err => {
                     if ( err ) console.log('ERROR: ' + err);
-                    console.log('Name changed')
+                    else console.log('Name changed')
             })
     }
 
@@ -114,7 +114,7 @@ app.get('/videoplayer' , (req, res) => {
         "Content-Range": `bytes ${start}-${end}/${videoSize}`,
         "Accept-Ranges": "bytes",
         "Content-Length": contentLength,
-        "Content-Type": "video/mp4"
+        "Content-Type": "video/mkv, video/mp4"
     }
 
     res.writeHead(206, headers)
